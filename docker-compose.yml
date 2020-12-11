@@ -53,11 +53,11 @@ services:
     volumes:
       - redis-data:/var/lib/redis
 
-  nextjs:
-    container_name: nextjs
+  vuejs:
+    container_name: vuejs
     build:
       context: ./client
-    image: workspace_next
+    image: workspace_vue
     restart: always
     ports:
       - "80:80"
