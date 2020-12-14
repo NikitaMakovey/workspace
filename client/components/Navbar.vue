@@ -22,7 +22,27 @@
 
 <script>
 export default {
-
+  data() {
+    return {
+      location: ''
+    }
+  },
+  mounted() {
+    this.getUserLocation()
+  },
+  methods: {
+    getUserLocation() {
+      navigator.geolocation.getCurrentPosition(
+        position => {
+          console.log(position.coords.latitude)
+          console.log(position.coords.longitude)
+        },
+        error => {
+          console.log(error.message)
+        },
+      )
+    }
+  }
 }
 </script>
 

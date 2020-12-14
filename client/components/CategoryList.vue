@@ -3,21 +3,16 @@
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+    <div class="collapse navbar-collapse">
       <ul class="navbar-nav">
-        <template v-for="(category, i) in categories">
-          <li class="nav-item dropdown">
-            <a
-              class="nav-link dropdown-toggle" href="#" :id="`navbarDropdownMenuLink${i}`"
-              role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+        <template v-for="category in categories">
+          <li class="nav-item">
+            <nuxt-link
+              class="nav-link" :to="`/categories/${category.slug}`"
+              role="button" aria-haspopup="true" aria-expanded="false"
             >
               {{ category.name }}
-            </a>
-            <div class="dropdown-menu" :aria-labelledby="`navbarDropdownMenuLink${i}`" v-if="category.items.length > 0">
-              <template v-for="item in category.items">
-                <a class="dropdown-item" :href="`/categories/${item.link}`">{{ item.name }}</a>
-              </template>
-            </div>
+            </nuxt-link>
           </li>
         </template>
       </ul>
@@ -27,7 +22,12 @@
 
 <script>
 export default {
-  props: ['categories']
+  props: ['categories'],
+  methods: {
+    getCategory(slug) {
+      return this.categories.filter(category => category.slug === slug).name
+    }
+  }
 }
 </script>
 

@@ -3,7 +3,7 @@
     <navbar></navbar>
     <search-navbar></search-navbar>
     <category-list :categories="categories"></category-list>
-    <div class="container">
+    <div class="container" style="min-height: 800px">
       <nuxt />
     </div>
     <footer-container></footer-container>
@@ -20,46 +20,11 @@ export default {
   data() {
     return {
       categories: [
-        {
-          name: 'CategoryName', items: [
-            { name: 'CategoryName', link: 'category-link' },
-            { name: 'CategoryName', link: 'category-link' },
-            { name: 'CategoryName', link: 'category-link' },
-            { name: 'CategoryName', link: 'category-link' },
-          ]
-        },
-        {
-          name: 'CategoryName', items: [
-            { name: 'CategoryName', link: 'category-link' },
-            { name: 'CategoryName', link: 'category-link' },
-            { name: 'CategoryName', link: 'category-link' },
-            { name: 'CategoryName', link: 'category-link' },
-          ]
-        },
-        {
-          name: 'CategoryName', items: [
-            { name: 'CategoryName', link: 'category-link' },
-            { name: 'CategoryName', link: 'category-link' },
-            { name: 'CategoryName', link: 'category-link' },
-            { name: 'CategoryName', link: 'category-link' },
-          ]
-        },
-        {
-          name: 'CategoryName', items: [
-            { name: 'CategoryName', link: 'category-link' },
-            { name: 'CategoryName', link: 'category-link' },
-            { name: 'CategoryName', link: 'category-link' },
-            { name: 'CategoryName', link: 'category-link' },
-          ]
-        },
-        {
-          name: 'CategoryName', items: [
-            { name: 'CategoryName', link: 'category-link' },
-            { name: 'CategoryName', link: 'category-link' },
-            { name: 'CategoryName', link: 'category-link' },
-            { name: 'CategoryName', link: 'category-link' },
-          ]
-        },
+        { name: 'CategoryName', slug: 'category-link' },
+        { name: 'CategoryName', slug: 'category-link' },
+        { name: 'CategoryName', slug: 'category-link' },
+        { name: 'CategoryName', slug: 'category-link' },
+        { name: 'CategoryName', slug: 'category-link' },
       ],
     }
   },
